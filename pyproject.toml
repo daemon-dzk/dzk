@@ -18,3 +18,7 @@ dzk = "src.cli:main"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["src*"]
+
+[[project.authors]]
+name = "scarepere"
+email = "12warbre@gmail.com"
