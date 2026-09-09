@@ -5,21 +5,21 @@ Security utility toolkit for CTF and forensic analysis.
 
 ## Usage
 
-dzk analyze suspicious.jpg
-dzk hash file.bin --algo sha256
-dzk metadata image.png
-dzk entropy encrypted.dat
+dzk analyze suspicious.jpg  
+dzk hash file.bin --algo sha256  
+dzk metadata image.png  
+dzk entropy encrypted.dat  
 dzk strings binary.exe --min-len 6
 
 ## Features
-File analysis (type, size, entropy)
-Hash calculation (MD5, SHA1, SHA256, SHA512)
-Metadata extraction
-Suspicious string detection
+File analysis (type, size, entropy)  
+Hash calculation (MD5, SHA1, SHA256, SHA512)   
+Metadata extraction  
+Suspicious string detection  
 Embedded file detection
 
 ## Usage
-bash
+```bash
 dzk analyze suspicious.jpg
 dzk hash file.bin --algo sha256
 dzk metadata image.png
@@ -28,9 +28,9 @@ dzk strings binary.exe --min-len 6
 dzk dns example.com --type A
 dzk http https://github.com
 dzk pcap capture.pcap
-
+```
 ## Example Output
-
+```bash
 dzk analyze suspicious.jpg
 
 ==================================================
@@ -52,7 +52,7 @@ dzk analyze suspicious.jpg
   - admin_password
   - secret_key
 ==================================================
-
+```
 ## Install
 
 ```bash
