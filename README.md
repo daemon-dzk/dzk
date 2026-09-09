@@ -137,6 +137,12 @@ cd dzk
 pip install -r requirements.txt
 pip install -e .
 ```
+You can easily install `dzk` directly from PyPI using pip:
+
+```bash
+pip install dzk
+```
+
 ### License
 MIT — Use it, break it, fix it, share it.
 
