@@ -5,7 +5,7 @@ dzk - Personal Security Utility Toolkit
 
 import sys
 import argparse
-from modules.analyze import analyze_file
+from src.modules.analyze import analyze_file
 from modules.hash import hash_file
 from modules.metadata import get_metadata
 from modules.entropy import calculate_entropy
