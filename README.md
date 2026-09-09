@@ -19,7 +19,7 @@ Suspicious string detection
 Embedded file detection
 
 ## Usage
-bash
+```bash
 dzk analyze suspicious.jpg
 dzk hash file.bin --algo sha256
 dzk metadata image.png
@@ -28,7 +28,7 @@ dzk strings binary.exe --min-len 6
 dzk dns example.com --type A
 dzk http https://github.com
 dzk pcap capture.pcap
-
+```
 ## Example Output
 
 dzk analyze suspicious.jpg
