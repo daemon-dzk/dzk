@@ -1,6 +1,8 @@
 # dzk
 
-Security utility toolkit for CTF and forensic analysis.
+> Personal security utility toolkit — one command, many capabilities.
+
+`dzk` is a modular CLI toolkit built for CTF, forensic analysis, and security research. Instead of switching between `file`, `exiftool`, `binwalk`, `strings`, `dig`, `curl`, and `tshark`, you just use `dzk`.
 
 ## Usage
 
@@ -9,7 +11,7 @@ exam:
 dzk analyze suspicious.jpg  
 dzk hash file.bin --algo sha256  
 dzk metadata image.png  
-@@ -29,34 +30,119 @@ dzk dns example.com --type A
+dzk dns example.com --type A
 dzk http https://github.com
 dzk pcap capture.pcap
 ```
@@ -127,11 +129,12 @@ Install all with:
 pip install -r requirements.txt
 ```
 
-## Install
+##  Quick Install
 
 ```bash
-git clone https://github.com/[username]/dzk.git
+git clone https://github.com/daemon-dzk/dzk.git
 cd dzk
+pip install -r requirements.txt
 pip install -e .
 ```
 ### License
