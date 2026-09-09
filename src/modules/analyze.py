@@ -1,7 +1,7 @@
 """
 Full file analysis module - The Swiss Army knife
 """
-
+import math
 import os
 import json
 import hashlib
@@ -41,7 +41,7 @@ def calculate_entropy_bytes(data: bytes) -> float:
     for x in range(256):
         p_x = data.count(x) / len(data)
         if p_x > 0:
-            entropy += -p_x * (p_x.bit_length() - 1)  # log2 approximation
+            entropy += -p_x * math.log2(p_x)
     return round(entropy, 4)
 
 
