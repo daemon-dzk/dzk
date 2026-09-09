@@ -5,16 +5,21 @@ PCAP analyzer - packet dissection and suspicious detection
 import os
 from collections import Counter
 
-try:
-    from scapy.all import rdpcap, IP, TCP, UDP, ICMP, Raw, ARP, DNS
-except ImportError:
-    print("[!] Scapy not installed. Run: pip install scapy")
-    exit(1)
-
 
 def pcap_analyze(filepath: str):
     """Analyze PCAP file"""
     
+    # === LAZY IMPORT: Scapy cuma di-import kalo fungsi ini dipanggil ===
+    try:
+        from scapy.all import rdpcap, IP, TCP, UDP, ICMP, Raw, ARP, DNS
+    except ImportError:
+        print("\n[!] Scapy is not installed.")
+        print("[*] Install it using: pip install scapy")
+        print("[*] Or install all dependencies: pip install -r requirements.txt")
+        print("\n[!] Hint: 'dzk pcap' requires Scapy, but other commands (analyze, hash, dns, http) don't.")
+        return  # <-- Ini cuma berhentiin fungsi ini, bukan matiin seluruh program
+    
+    # Cek file exist
     if not os.path.exists(filepath):
         print(f"[!] File not found: {filepath}")
         return
@@ -52,8 +57,6 @@ def pcap_analyze(filepath: str):
                 if TCP in pkt:
                     if pkt[TCP].dport == 4444 or pkt[TCP].sport == 4444:
                         suspicious.append(f"Metasploit port 4444 - {pkt[IP].src}:{pkt[TCP].sport} -> {pkt[IP].dst}:{pkt[TCP].dport}")
-                    if pkt[TCP].flags & 0x02 and pkt[TCP].flags & 0x04:  # SYN+ACK
-                        pass  # normal
                 
                 if Raw in pkt:
                     payload = pkt[Raw].load
