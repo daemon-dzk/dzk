@@ -56,7 +56,7 @@ dzk analyze suspicious.jpg
 ## Install
 
 ```bash
-git clone https://github.com/[username]/dzk.git
+git clone https://github.com/daemon-dzk/dzk.git
 cd dzk
 pip install -e .
 
