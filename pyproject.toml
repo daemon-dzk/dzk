@@ -8,6 +8,11 @@ version = "0.1.0"
 description = "Personal security utility toolkit"
 readme = "README.md"
 requires-python = ">=3.9"
+
+authors = [
+    { name = "daemon-dzk", email = "12warbre@gmail.com" }
+]
+
 dependencies = [
     "python-magic>=0.4.27",
     "pyyaml>=6.0",
@@ -22,7 +27,3 @@ dzk = "src.cli:main"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["src*"]
-
-[[project.authors]]
-name = "daemon-dzk"
-email = "12warbre@gmail.com"
